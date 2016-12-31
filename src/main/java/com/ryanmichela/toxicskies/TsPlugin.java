@@ -6,7 +6,6 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.mcstats.Metrics;
 
 import java.io.IOException;
 
@@ -20,12 +19,7 @@ public class TsPlugin extends JavaPlugin  implements Listener
     }
 
     public void onEnable() {
-        try {
-            Metrics metrics = new Metrics(this);
-            metrics.start();
-        } catch (IOException e) {
-            // Failed to submit the stats :-(
-        }
+        
 
         saveDefaultConfig();
 
@@ -42,7 +36,7 @@ public class TsPlugin extends JavaPlugin  implements Listener
     }
 
     public void onDisable() {
-
+    	
     }
 
     @EventHandler

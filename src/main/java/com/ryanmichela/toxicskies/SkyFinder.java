@@ -49,6 +49,7 @@ public abstract class SkyFinder {
                  type != Material.DETECTOR_RAIL &&
                  type != Material.SNOW &&
                  type != Material.WOODEN_DOOR &&
+                 type != Material.ACACIA_DOOR &&
                  type != Material.IRON_DOOR_BLOCK &&
                  type != Material.TRAP_DOOR &&
                  type != Material.DOUBLE_PLANT;
