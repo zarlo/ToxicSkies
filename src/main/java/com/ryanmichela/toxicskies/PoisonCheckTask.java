@@ -2,9 +2,16 @@ package com.ryanmichela.toxicskies;
 
 import org.bukkit.GameMode;
 import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
+
+import com.ryanmichela.toxicskies.WG.WGMain;
+import com.sk89q.worldguard.LocalPlayer;
+import com.sk89q.worldguard.bukkit.WGBukkit;
+import com.sk89q.worldguard.protection.ApplicableRegionSet;
+import com.sk89q.worldguard.protection.managers.RegionManager;
 
 import java.util.Random;
 
@@ -19,12 +26,16 @@ public class PoisonCheckTask implements Runnable {
 		this.plugin = plugin;
 		this.player = player;
 	}
-
+	
+	
 	@Override
 	public void run() {
+		
+		
 		if (player.isOnline() && TsSettings.playerInAffectedWorld(player) && modeAllowsDamage(player)
 				&& player.getGameMode() != GameMode.CREATIVE && !player.hasPermission("ToxicSkies.Bypass")
-				&& !player.getInventory().getHelmet().getEnchantments().containsKey(Enchantment.OXYGEN)) {
+				&& !player.getInventory().getHelmet().getEnchantments().containsKey(Enchantment.OXYGEN)
+				&& WGMain.IsInRegion(player)) {
 			try {
 				Location playerHead = normalize(player.getLocation()).add(0, 1, 0);
 				SkyFinder skyFinder = new DepthFirstSkyFinder();
@@ -44,6 +55,11 @@ public class PoisonCheckTask implements Runnable {
 			} catch (Throwable t) {
 				plugin.getLogger().severe(t.toString());
 			}
+		}
+		else
+		{
+			//this will get used later
+			
 		}
 		if (plugin.isEnabled()) {
 			int offset = r.nextInt(20);

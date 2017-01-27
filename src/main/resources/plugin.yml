@@ -1,5 +1,7 @@
 name: ToxicSkies
 version: 2.4.0
+authors: [zarlo5899, DeltaHat]
+softdepend: [WorldGuard]
 main: com.ryanmichela.toxicskies.TsPlugin
 permissions:
     ToxicSkies.bypass:

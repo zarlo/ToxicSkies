@@ -7,20 +7,30 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.io.IOException;
-
+import com.ryanmichela.toxicskies.WG.WGMain;
 /**
  */
 public class TsPlugin extends JavaPlugin  implements Listener
 {
+	
     private static Plugin instance;
     public TsPlugin() {
         instance = this;
     }
 
+     
+    
     public void onEnable() {
-        
-
+        if(Utill.loadPlugin("WorldGuard") != null){
+    	getLogger().info("Adding WorldGuard stuff ");
+        WGMain.Init();
+        WGMain.hasWG = true;
+        }
+        else
+        {
+        	
+        	
+        }
         saveDefaultConfig();
 
         for (String worldName : TsSettings.getAffectedWorlds()) {
