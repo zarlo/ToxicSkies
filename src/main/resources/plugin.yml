@@ -4,6 +4,6 @@ authors: [zarlo5899, DeltaHat]
 softdepend: [WorldGuard]
 main: com.ryanmichela.toxicskies.TsPlugin
 permissions:
-    ToxicSkies.bypass:
+    toxicskies.bypass.*:
         description: bypass ToxicSkies
         default: fales

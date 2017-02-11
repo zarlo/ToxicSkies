@@ -33,9 +33,10 @@ public class PoisonCheckTask implements Runnable {
 		
 		
 		if (player.isOnline() && TsSettings.playerInAffectedWorld(player) && modeAllowsDamage(player)
-				&& player.getGameMode() != GameMode.CREATIVE && !player.hasPermission("ToxicSkies.Bypass")
+				&& player.getGameMode() != GameMode.CREATIVE && !player.hasPermission("toxicskies.bypass.*")
 				&& !player.getInventory().getHelmet().getEnchantments().containsKey(Enchantment.OXYGEN)
-				&& WGMain.IsInRegion(player)) {
+				&& WGMain.IsInRegion(player)
+				&& !player.hasPermission("toxicskies.bypass." + player.getWorld().getName())) {
 			try {
 				Location playerHead = normalize(player.getLocation()).add(0, 1, 0);
 				SkyFinder skyFinder = new DepthFirstSkyFinder();
