@@ -50,6 +50,10 @@ public abstract class SkyFinder {
                  type != Material.SNOW &&
                  type != Material.WOODEN_DOOR &&
                  type != Material.ACACIA_DOOR &&
+                 type != Material.BIRCH_DOOR &&
+                 type != Material.DARK_OAK_DOOR &&
+                 type != Material.JUNGLE_DOOR &&
+                 type != Material.SPRUCE_DOOR &&
                  type != Material.IRON_DOOR_BLOCK &&
                  type != Material.TRAP_DOOR &&
                  type != Material.DOUBLE_PLANT;

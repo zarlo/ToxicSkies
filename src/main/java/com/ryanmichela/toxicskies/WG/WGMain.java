@@ -29,6 +29,7 @@ public class WGMain {
 	{
 		if(hasWG)
 		{
+			
 			if(WorldGuard.getRegionManager(p.getWorld()).getApplicableRegions(p.getLocation()) == null)
 			{
 				return false;

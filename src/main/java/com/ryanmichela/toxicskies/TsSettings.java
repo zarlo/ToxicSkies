@@ -78,11 +78,11 @@ public class TsSettings {
     }
 
     public static String getPumpkinHelmetBreakMessage() {
-        return TsPlugin.getInstance().getConfig().getString("PumpkinHelmetBreakMessage", "Your pumpkin helmet falls apart in your hands!");
+        return TsPlugin.getInstance().getConfig().getString("PumpkinHelmetBreakMessage", "Your helmet falls apart in your hands!");
     }
 
     public static String getPumpkinHelmetSurviveMessage() {
-        return TsPlugin.getInstance().getConfig().getString("PumpkinHelmetSurviveMessage", "Your pumpkin helmet weakens.");
+        return TsPlugin.getInstance().getConfig().getString("PumpkinHelmetSurviveMessage", "Your helmet weakens.");
     }
 
     public static Material getPumpkinHelmetMaterial() {
