@@ -26,18 +26,57 @@ public class PoisonCheckTask implements Runnable {
 		this.plugin = plugin;
 		this.player = player;
 	}
-	
-	
+
+
 	@Override
 	public void run() {
+
 		
-		
-		if (player.isOnline() && TsSettings.playerInAffectedWorld(player) && modeAllowsDamage(player)
-				&& player.getGameMode() != GameMode.CREATIVE && !player.hasPermission("toxicskies.bypass.*")
-				&& !player.getInventory().getHelmet().getEnchantments().containsKey(Enchantment.OXYGEN)
+	if(TsSettings.getDebug().toLowerCase() == "true"){	
+if(TsSettings.playerInAffectedWorld(player)){
+		MessageTracker.sendMessage(player, "1True");
+}else
+{
+	MessageTracker.sendMessage(player, "1False");	
+}
+if(modeAllowsDamage(player)){
+	MessageTracker.sendMessage(player, "2True");
+}else
+{
+MessageTracker.sendMessage(player, "2False");	
+}		
+
+if(!player.hasPermission("toxicskies.bypass.*")){
+	MessageTracker.sendMessage(player, "3True");
+}else
+{
+MessageTracker.sendMessage(player, "3False");	
+}		
+
+if(WGMain.IsInRegion(player)){
+	MessageTracker.sendMessage(player, "4True");
+}else
+{
+MessageTracker.sendMessage(player, "4False");	
+}		
+
+if(!player.hasPermission("toxicskies.bypass." + player.getWorld().getName())){
+	MessageTracker.sendMessage(player, "5True");
+}else
+{
+MessageTracker.sendMessage(player, "5False");	
+}
+	}
+
+		if (player.isOnline()
+				&& TsSettings.playerInAffectedWorld(player)
+				&& modeAllowsDamage(player)
+				&& player.getGameMode() == GameMode.SURVIVAL
+				&& !player.hasPermission("toxicskies.bypass.*")
 				&& WGMain.IsInRegion(player)
 				&& !player.hasPermission("toxicskies.bypass." + player.getWorld().getName())) {
 			try {
+				//MessageTracker.sendMessage(player, "RUN");
 				Location playerHead = normalize(player.getLocation()).add(0, 1, 0);
 				SkyFinder skyFinder = new DepthFirstSkyFinder();
 				Runnable nextTask;
@@ -60,7 +99,7 @@ public class PoisonCheckTask implements Runnable {
 		else
 		{
 			//this will get used later
-			
+
 		}
 		if (plugin.isEnabled()) {
 			int offset = r.nextInt(20);

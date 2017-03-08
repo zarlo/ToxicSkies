@@ -60,6 +60,10 @@ public class TsSettings {
         return TsPlugin.getInstance().getConfig().getString("CleanAirMessage", "The air is clean here.");
     }
 
+    public static String getDebug() {
+        return TsPlugin.getInstance().getConfig().getString("DeBug", "FALSE");
+    }
+    
     public static Set<String> getAffectedWorlds() {
         return worldModes.keySet();
     }

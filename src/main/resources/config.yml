@@ -1,3 +1,4 @@
+DeBug: False # Dont Edit game chat will be spamed
 # Global mode - controls the default way Toxic Skies makes the air poisonous
 # Mode 1 - Always raining. Air always toxic.
 # Mode 2 - Rains now and then (like normal). Air always toxic.

@@ -1,9 +1,9 @@
 name: ToxicSkies
-version: 2.4.0
+version: 2.5.3
 authors: [zarlo5899, DeltaHat]
 softdepend: [WorldGuard]
 main: com.ryanmichela.toxicskies.TsPlugin
-permissions:
-    toxicskies.bypass.*:
-        description: bypass ToxicSkies
-        default: fales
+Permissions:
+  toxicskies.bypas.*:
+    description: bypass ToxicSkies
+    default: false
