@@ -6,6 +6,8 @@ import org.bukkit.World;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
+import org.bukkit.potion.PotionEffectType;
+import org.bukkit.potion.PotionType;
 
 import com.ryanmichela.toxicskies.WG.WGMain;
 import com.sk89q.worldguard.LocalPlayer;
@@ -66,6 +68,12 @@ if(!player.hasPermission("toxicskies.bypass." + player.getWorld().getName())){
 {
 MessageTracker.sendMessage(player, "5False");	
 }
+if(!player.hasPotionEffect(PotionEffectType.WATER_BREATHING)){
+	MessageTracker.sendMessage(player, "6True");
+}else
+{
+MessageTracker.sendMessage(player, "6False");	
+}
 	}
 
 		if (player.isOnline()
@@ -74,7 +82,8 @@ MessageTracker.sendMessage(player, "5False");
 				&& player.getGameMode() == GameMode.SURVIVAL
 				&& !player.hasPermission("toxicskies.bypass.*")
 				&& WGMain.IsInRegion(player)
-				&& !player.hasPermission("toxicskies.bypass." + player.getWorld().getName())) {
+				&& !player.hasPermission("toxicskies.bypass." + player.getWorld().getName())
+				&& !player.hasPotionEffect(PotionEffectType.WATER_BREATHING)) {
 			try {
 				//MessageTracker.sendMessage(player, "RUN");
 				Location playerHead = normalize(player.getLocation()).add(0, 1, 0);

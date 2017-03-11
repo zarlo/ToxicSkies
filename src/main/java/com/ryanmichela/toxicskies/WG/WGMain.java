@@ -11,7 +11,6 @@ import com.sk89q.worldguard.protection.*;;
 
 public class WGMain {
 
-	//public static final Flag ToxicSkies_Flag = new StateFlag("ToxicSkies", true);
 
 	/** The World guard. */
     public static WorldGuardPlugin WorldGuard = null;
@@ -21,8 +20,7 @@ public class WGMain {
 	{
 		
     	WorldGuard = ((WorldGuardPlugin) Utill.loadPlugin("WorldGuard"));
-    	
-		
+
 	}
 	
 	public static Boolean IsInRegion(Player p)

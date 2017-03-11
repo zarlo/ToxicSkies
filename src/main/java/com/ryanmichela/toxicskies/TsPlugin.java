@@ -16,9 +16,7 @@ public class TsPlugin extends JavaPlugin  implements Listener
     private static Plugin instance;
     public TsPlugin() {
         instance = this;
-    }
-
-     
+    }  
     
     public void onEnable() {
         if(Utill.loadPlugin("WorldGuard") != null){
