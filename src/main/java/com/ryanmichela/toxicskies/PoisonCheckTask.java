@@ -104,17 +104,21 @@ MessageTracker.sendMessage(player, "6False");
 			} catch (Throwable t) {
 				plugin.getLogger().severe(t.toString());
 			}
+			if (plugin.isEnabled()) {
+				int offset = r.nextInt(20);
+				plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, this,
+						TsSettings.getSecondsBetweenPolls() + offset);
+			}
 		}
 		else
 		{
-			//this will get used later
-
+			if (plugin.isEnabled()) {
+				int offset = r.nextInt(40);
+				plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, this,
+						TsSettings.getSecondsBetweenPolls() + offset);
+			}
 		}
-		if (plugin.isEnabled()) {
-			int offset = r.nextInt(20);
-			plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, this,
-					TsSettings.getSecondsBetweenPolls() + offset);
-		}
+		
 	}
 
 	private Location normalize(Location l) {
