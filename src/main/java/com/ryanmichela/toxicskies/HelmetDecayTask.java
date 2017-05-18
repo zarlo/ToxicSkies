@@ -7,10 +7,10 @@ import java.util.Random;
 
 /**
  */
-public class PumpkinDecayTask implements Runnable {
+public class HelmetDecayTask implements Runnable {
     private Player player;
 
-    public PumpkinDecayTask(Player player) {
+    public HelmetDecayTask(Player player) {
         this.player = player;
     }
 
@@ -18,11 +18,11 @@ public class PumpkinDecayTask implements Runnable {
     public void run() {
         Random r = new Random();
         int breakRoll = r.nextInt(100);
-        if (breakRoll < TsSettings.getPumpkinHelmetBreakChancePercent()) {
+        if (breakRoll < TsSettings.getHelmetBreakChancePercent()) {
             player.getInventory().setHelmet(null);
-            MessageTracker.sendMessage(player, TsSettings.getPumpkinHelmetBreakMessage());
+            MessageTracker.sendMessage(player, TsSettings.getHelmetBreakMessage());
         } else {
-            MessageTracker.sendMessage(player, TsSettings.getPumpkinHelmetSurviveMessage());
+            MessageTracker.sendMessage(player, TsSettings.getHelmetSurviveMessage());
         }
     }
 }

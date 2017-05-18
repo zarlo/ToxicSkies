@@ -16,8 +16,8 @@ public class TsPlugin extends JavaPlugin  implements Listener
     private static Plugin instance;
     public TsPlugin() {
         instance = this;
-    }  
-    
+    }
+
     public void onEnable() {
         if(Utill.loadPlugin("WorldGuard") != null){
     	getLogger().info("Adding WorldGuard stuff ");
@@ -26,8 +26,8 @@ public class TsPlugin extends JavaPlugin  implements Listener
         }
         else
         {
-        	
-        	
+
+
         }
         saveDefaultConfig();
 
@@ -44,7 +44,7 @@ public class TsPlugin extends JavaPlugin  implements Listener
     }
 
     public void onDisable() {
-    	
+
     }
 
     @EventHandler

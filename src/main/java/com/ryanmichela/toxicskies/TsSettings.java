@@ -63,7 +63,7 @@ public class TsSettings {
     public static String getDebug() {
         return TsPlugin.getInstance().getConfig().getString("DeBug", "FALSE");
     }
-    
+
     public static Set<String> getAffectedWorlds() {
         return worldModes.keySet();
     }
@@ -77,20 +77,20 @@ public class TsSettings {
         return false;
     }
 
-    public static int getPumpkinHelmetBreakChancePercent() {
-        return TsPlugin.getInstance().getConfig().getInt("PumpkinHelmetBreakChancePercent", 8);
+    public static int getHelmetBreakChancePercent() {
+        return TsPlugin.getInstance().getConfig().getInt("HelmetBreakChancePercent", 8);
     }
 
-    public static String getPumpkinHelmetBreakMessage() {
-        return TsPlugin.getInstance().getConfig().getString("PumpkinHelmetBreakMessage", "Your helmet falls apart in your hands!");
+    public static String getHelmetBreakMessage() {
+        return TsPlugin.getInstance().getConfig().getString("HelmetBreakMessage", "Your helmet falls apart in your hands!");
     }
 
-    public static String getPumpkinHelmetSurviveMessage() {
-        return TsPlugin.getInstance().getConfig().getString("PumpkinHelmetSurviveMessage", "Your helmet weakens.");
+    public static String getHelmetSurviveMessage() {
+        return TsPlugin.getInstance().getConfig().getString("HelmetSurviveMessage", "Your helmet weakens.");
     }
 
-    public static Material getPumpkinHelmetMaterial() {
-        String materialName = TsPlugin.getInstance().getConfig().getString("PumpkinHelmetMaterial", "PUMPKIN");
+    public static Material getHelmetMaterial() {
+        String materialName = TsPlugin.getInstance().getConfig().getString("HelmetMaterial", "");
         Material material = Material.matchMaterial(materialName);
         if (material == null) {
             return Material.PUMPKIN;

@@ -92,8 +92,8 @@ MessageTracker.sendMessage(player, "6False");
 				if (skyFinder.canSeeSky(playerHead, RADIUS_TO_SEEK_SKY)) {
 
 					if (player.getInventory().getHelmet() != null
-							&& player.getInventory().getHelmet().getType() == TsSettings.getPumpkinHelmetMaterial()) {
-						nextTask = new PumpkinDecayTask(player);
+							&& player.getInventory().getHelmet().getType() == TsSettings.getHelmetMaterial()) {
+						nextTask = new HelmetDecayTask(player);
 					} else {
 						nextTask = new DamageApplyTask(player);
 					}
