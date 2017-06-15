@@ -2,6 +2,7 @@ package com.ryanmichela.toxicskies;
 
 import org.bukkit.GameMode;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -92,7 +93,7 @@ MessageTracker.sendMessage(player, "6False");
 				if (skyFinder.canSeeSky(playerHead, RADIUS_TO_SEEK_SKY)) {
 
 					if (player.getInventory().getHelmet() != null
-							&& player.getInventory().getHelmet().getType() == TsSettings.getHelmetMaterial()) {
+							&& isHelmetMaterial(player.getInventory().getHelmet().getType()) ) {
 						nextTask = new HelmetDecayTask(player);
 					} else {
 						nextTask = new DamageApplyTask(player);
@@ -121,6 +122,21 @@ MessageTracker.sendMessage(player, "6False");
 		
 	}
 
+	private boolean isHelmetMaterial(Material p)
+	{
+		for(Material Item : TsSettings.getHelmetMaterial())
+		{
+			
+			if(Item == p)
+			{
+				return true;
+			}
+			
+		}
+		
+		return false;
+	}
+	
 	private Location normalize(Location l) {
 		return new Location(l.getWorld(), l.getBlockX(), l.getBlockY(), l.getBlockZ());
 	}

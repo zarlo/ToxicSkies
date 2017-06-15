@@ -30,11 +30,11 @@ public class WGMain {
 			
 			if(WorldGuard.getRegionManager(p.getWorld()).getApplicableRegions(p.getLocation()) == null)
 			{
-				return false;
+				return true;
 			}
 			else
 			{
-				return true;
+				return false;
 			}
 		}
 		return true;

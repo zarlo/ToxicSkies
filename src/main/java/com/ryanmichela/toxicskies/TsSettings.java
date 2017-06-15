@@ -89,12 +89,26 @@ public class TsSettings {
         return TsPlugin.getInstance().getConfig().getString("HelmetSurviveMessage", "Your helmet weakens.");
     }
 
-    public static Material getHelmetMaterial() {
-        String materialName = TsPlugin.getInstance().getConfig().getString("HelmetMaterial", "");
-        Material material = Material.matchMaterial(materialName);
-        if (material == null) {
-            return Material.PUMPKIN;
+    public static Material[] getHelmetMaterial() {
+        List<String> materialName = TsPlugin.getInstance().getConfig().getStringList("HelmetMaterial");
+        Material material[] = null;
+        int i = 0;
+        for(String Item : materialName){
+        	
+        	Material materialt = Material.matchMaterial(Item);
+        
+        	if (materialt != null) {
+            	material[i] = materialt;
+            	i++;
+            }
+            
+
         }
+        
+        if (material == null) {
+        	material[0] = Material.PUMPKIN;
+        }
+        
         return material;
     }
 

@@ -11,10 +11,11 @@ SecondsBetweenPolls: 10
 AboveGroundDamage: 1
 AboveGroundMessage: The air burns your lungs and saps your strength!
 CleanAirMessage: The air is clean here.
-PumpkinHelmetBreakChancePercent: 8
-PumpkinHelmetBreakMessage: Your helmet falls apart in your hands!
-PumpkinHelmetSurviveMessage: Your helmet weakens.
-PumpkinHelmetMaterial: PUMPKIN
+HelmetBreakChancePercent: 8
+HelmetBreakMessage: Your helmet falls apart in your hands!
+HelmetSurviveMessage: Your helmet weakens.
+HelmetMaterial:
+- PUMPKIN
 
 # For a complete list, see: http://jd.bukkit.org/rb/apidocs/org/bukkit/potion/PotionEffectType.html
 PoisonEffects:
