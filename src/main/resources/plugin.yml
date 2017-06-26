@@ -1,5 +1,5 @@
 name: ToxicSkies
-version: 2.5.3
+version: 2.6.0
 authors: [zarlo5899, DeltaHat]
 softdepend: [WorldGuard]
 main: com.ryanmichela.toxicskies.TsPlugin

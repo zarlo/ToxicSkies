@@ -23,8 +23,8 @@
 	<!-- Source code -->
 	<scm>
 		<developerConnection>scm:git:git@github.com:zarlo/${project.name}.git</developerConnection>
-		<connection>scm:git:git://github.com/zarlo/${project.name}.git</connection>
-		<url>https://github.com/zarlo/${project.name}</url>
+		<connection>scm:git:git://github.com/projectzarlo/${project.name}.git</connection>
+		<url>https://github.com/zarlo/${.name}</url>
 	</scm>
 
 	<!-- Repositories -->
