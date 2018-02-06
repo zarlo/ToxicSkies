@@ -76,6 +76,7 @@
 					<target>1.8</target>
 					<encoding>${project.build.sourceEncoding}</encoding>
 					<showDeprecation>true</showDeprecation>
+					<finalName>${project.artifactId}-${project.version}-${maven.build.timestamp}</finalName>
 				</configuration>
 			</plugin>
 			<!-- Shade plugin -->

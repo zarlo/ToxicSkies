@@ -1,7 +1,7 @@
 Toxic Skies
 ===========
 
-[![Build Status](https://travis-ci.org/zarlo/ToxicSkies.svg?branch=master)](https://travis-ci.org/zarlo/ToxicSkies)
+[![Build Status](https://ci.zarlo.xyz/job/ToxicSkies/badge/icon)](https://ci.zarlo.xyz/job/ToxicSkies/)
 
 Toxic Skies is a Bukkit plugin that makes the world a harsher and more dangerous place. Players are forced to survive underground or else be destroyed by the elements. Toxic Skies adds the following game mechanics:
 

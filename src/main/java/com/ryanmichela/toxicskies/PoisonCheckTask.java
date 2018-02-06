@@ -34,48 +34,7 @@ public class PoisonCheckTask implements Runnable {
 	@Override
 	public void run() {
 
-		
-	if(TsSettings.getDebug().toLowerCase() == "true"){	
-if(TsSettings.playerInAffectedWorld(player)){
-		MessageTracker.sendMessage(player, "1True");
-}else
-{
-	MessageTracker.sendMessage(player, "1False");	
-}
-if(modeAllowsDamage(player)){
-	MessageTracker.sendMessage(player, "2True");
-}else
-{
-MessageTracker.sendMessage(player, "2False");	
-}		
-
-if(!player.hasPermission("toxicskies.bypass.*")){
-	MessageTracker.sendMessage(player, "3True");
-}else
-{
-MessageTracker.sendMessage(player, "3False");	
-}		
-
-if(WGMain.IsInRegion(player)){
-	MessageTracker.sendMessage(player, "4True");
-}else
-{
-MessageTracker.sendMessage(player, "4False");	
-}		
-
-if(!player.hasPermission("toxicskies.bypass." + player.getWorld().getName())){
-	MessageTracker.sendMessage(player, "5True");
-}else
-{
-MessageTracker.sendMessage(player, "5False");	
-}
-if(!player.hasPotionEffect(PotionEffectType.WATER_BREATHING)){
-	MessageTracker.sendMessage(player, "6True");
-}else
-{
-MessageTracker.sendMessage(player, "6False");	
-}
-	}
+	
 
 		if (player.isOnline()
 				&& TsSettings.playerInAffectedWorld(player)

@@ -8,58 +8,56 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.ryanmichela.toxicskies.WG.WGMain;
+
 /**
  */
-public class TsPlugin extends JavaPlugin  implements Listener
-{
-	
-    private static Plugin instance;
-    public TsPlugin() {
-        instance = this;
-    }
+public class TsPlugin extends JavaPlugin implements Listener {
 
-    public void onEnable() {
-        if(Utill.loadPlugin("WorldGuard") != null){
-    	getLogger().info("Adding WorldGuard stuff ");
-        WGMain.Init();
-        WGMain.hasWG = true;
-        }
-        else
-        {
+	private static Plugin instance;
 
+	public TsPlugin() {
+		instance = this;
+	}
 
-        }
-        saveDefaultConfig();
+	public void onEnable() {
+		if (Utill.loadPlugin("WorldGuard") != null) {
+			getLogger().info("Adding WorldGuard stuff ");
+			WGMain.Init();
+			WGMain.hasWG = true;
+		} else {
 
-        for (String worldName : TsSettings.getAffectedWorlds()) {
-            getLogger().info("Making the skies toxic in " + worldName);
-            if (TsSettings.getMode(worldName) == 1) {
-                // Always raining
-                AmbianceTask task = new AmbianceTask(this, worldName);
-                getServer().getScheduler().scheduleSyncDelayedTask(this, task);
-            }
-        }
+		}
+		saveDefaultConfig();
 
-        getServer().getPluginManager().registerEvents(this, this);
-    }
+		for (String worldName : TsSettings.getAffectedWorlds()) {
+			getLogger().info("Making the skies toxic in " + worldName);
+			if (TsSettings.getMode(worldName) == 1) {
+				// Always raining
+				AmbianceTask task = new AmbianceTask(this, worldName);
+				getServer().getScheduler().scheduleSyncDelayedTask(this, task);
+			}
+		}
 
-    public void onDisable() {
+		getServer().getPluginManager().registerEvents(this, this);
+	}
 
-    }
+	public void onDisable() {
 
-    @EventHandler
-    public void onPlayerJoin(PlayerJoinEvent event) {
-        MessageTracker.initPlayer(event.getPlayer());
-        PoisonCheckTask task = new PoisonCheckTask(this, event.getPlayer());
-        getServer().getScheduler().scheduleSyncDelayedTask(this, task, 20*10);
-    }
+	}
 
-    @EventHandler
-    public void onPlayerLeave(PlayerQuitEvent event) {
-        MessageTracker.clearMessage(event.getPlayer());
-    }
+	@EventHandler
+	public void onPlayerJoin(PlayerJoinEvent event) {
+		MessageTracker.initPlayer(event.getPlayer());
+		PoisonCheckTask task = new PoisonCheckTask(this, event.getPlayer());
+		getServer().getScheduler().scheduleSyncDelayedTask(this, task, 20 * 10);
+	}
 
-    static Plugin getInstance() {
-        return instance;
-    }
+	@EventHandler
+	public void onPlayerLeave(PlayerQuitEvent event) {
+		MessageTracker.clearMessage(event.getPlayer());
+	}
+
+	static Plugin getInstance() {
+		return instance;
+	}
 }
